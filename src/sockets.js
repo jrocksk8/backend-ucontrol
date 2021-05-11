@@ -2,6 +2,7 @@
 
 const User_Device = require('./models/add_device');
 const { io } = require('./index');
+const clientMQTT = require('./mqtt_config');
 const verifyJWT = require('./middlewares/verifyJWT');
 
 io.on('connection', client => {
@@ -25,11 +26,18 @@ io.on('connection', client => {
         });
         console.log(payload);
 
-        io.emit('response', {
+        /*io.emit('response', {
             "deviceSerial": payload.deviceSerial,
             "online": payload.online,
             "status": payload.status, 
-        });
+        });*/
+
+        var msg = {"deviceSerial": payload.deviceSerial, "online": payload.online, "status": payload.status};
+        clientMQTT.publish(payload.deviceSerial + '/' + 'commands', JSON.stringify(msg));
+
+        //clientMQTT.publish(payload.deviceSerial + '/' + 'commands', payload.status ? 'on' : 'off');
+        
+
     });
 
 });
