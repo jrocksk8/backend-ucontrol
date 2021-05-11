@@ -1,0 +1,129 @@
+@apiURL =  https://172.20.10.3:3000/api
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMDUzMjg3OSwiZXhwIjoxNjIwNzA1Njc5fQ.11zc8Pi2tWE4akfEMTHT8etpjBVZyM7-E4LXL8d_ixY
+
+////////////////////// USERS CONTROLLER //////////////////////
+
+### USERS: RENEW TOKEN
+GET {{apiURL}}/signin/renew
+Content-Type: application/json
+x-access-token: {{token}}
+
+### USERS: FORGOT PASSWORD
+GET {{apiURL}}/forgot-password
+
+### USERS: SIGN IN
+POST {{apiURL}}/signin
+Content-Type: application/json
+
+{
+    "email": "javelasco@outlook.com",
+    "password": "Passw0rd"
+}
+
+### USERS: SIGN UP
+POST {{apiURL}}/signup
+Content-Type: application/json
+
+{
+    "email": "prueba10@prueba.com",
+    "name": "Prueba10",
+    "password": "123456",
+    "rpassword": "123456"
+}
+
+
+////////////////////// ROOMS CONTROLLER //////////////////////
+
+### ROOMS: LIST ALL USER ROOMS WITH THEIR DEVICES
+GET {{apiURL}}/userRoomsDevices
+x-access-token: {{token}}
+Content-Type: application/json
+
+### ROOMS: LIST ALL USER ROOMS (WITHOUT DEVICES)
+GET {{apiURL}}/userRooms
+x-access-token: {{token}}
+Content-Type: application/json
+
+### ROOMS: ADD ROOM
+POST {{apiURL}}/addRoom
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceRoom": "Prueba"
+}
+
+### ROOMS: EDIT ROOM
+POST {{apiURL}}/editRoom
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceRoom": "Pruebadsdsd",
+    "newName": "Prueba2"
+}
+
+### ROOMS: DELETE ROOM
+POST {{apiURL}}/deleteRoom
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceRoom": "Pruebadsdsd"
+}
+
+### ROOMS: LIST ONE ROOM WITH THEIR DEVICES
+POST {{apiURL}}/roomDevices
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceRoom": "Kitchen"
+}
+
+
+////////////////////// DEVICES CONTROLLER //////////////////////
+
+### DEVICES: LIST uCONTROL DEVICES
+GET {{apiURL}}/listDevices
+x-access-token: {{token}}
+Content-Type: application/json
+
+### DEVICES: LIST ALL USER DEVICES
+GET {{apiURL}}/userDevices
+x-access-token: {{token}}
+Content-Type: application/json
+
+### DEVICES: ADD DEVICE
+POST {{apiURL}}/addDevice
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceClass": "Smart Switch v1",
+    "deviceName": "prueba",
+    "deviceSerial": "00000000",
+    "deviceRoom": "Kitchen"
+}
+
+### DEVICES: EDIT DEVICE
+POST {{apiURL}}/editDevice
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceSerial": "00000000",
+    "newRoom": "prueba",
+    "newName": "pppppp"
+}
+
+### DEVICES: DELETE DEVICE
+POST {{apiURL}}/deleteDevice
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceSerial": "00000000"
+}
+
+
