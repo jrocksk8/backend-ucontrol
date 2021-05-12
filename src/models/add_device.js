@@ -10,7 +10,8 @@ const newUserDeviceSchema = new Schema ({
     deviceSerial: String,
     deviceRoom: String,
     online: Boolean,
-    status: Boolean
+    status: Boolean,
+    tempAverage: Number
     }, {timestamps: true});
 
 module.exports = model('User_Device', newUserDeviceSchema);

@@ -13,14 +13,15 @@ async function getMsg(){
         messageJson = JSON.parse(message);
         
         if (topicSplit[1] == 'response'){
-            User_Device.updateMany({deviceSerial: topicSplit[0]}, { online: messageJson.online, status: messageJson.status}, function (error) {
+            User_Device.updateMany({deviceSerial: topicSplit[0]}, { online: messageJson.online, status: messageJson.status, tempAverage: messageJson.temp}, function (error) {
                 if (error) return handleError(error);
             });
 
             io.emit('response', {
                 "deviceSerial": topicSplit[0],
                 "online": messageJson.online,
-                "status": messageJson.status 
+                "status": messageJson.status,
+                "tempAverage": messageJson.temp
             });
         }       
 

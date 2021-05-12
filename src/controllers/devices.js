@@ -30,21 +30,38 @@ var devicesController = {
 
             const data = await Device.findOne({deviceClass: deviceClass});
 
-            const newDevice = new User_Device ({
-                userId: req.userId,
-                deviceClass: deviceClass,
-                deviceIcon: data.deviceIcon,
-                deviceName: deviceName,
-                deviceSerial: deviceSerial,
-                deviceRoom: deviceRoom,
-                online: false,
-                status:  false
-            });
+            if (deviceClass == "Smart Thermostat v1"){
+                const newDevice = new User_Device ({
+                    userId: req.userId,
+                    deviceClass: deviceClass,
+                    deviceIcon: data.deviceIcon,
+                    deviceName: deviceName,
+                    deviceSerial: deviceSerial,
+                    deviceRoom: deviceRoom,
+                    online: false,
+                    tempAverage: 0.0
+                });
+                
+                await newDevice.save();
+                console.log('Device Added Successfully!');
+                console.log(newDevice);
 
-            await newDevice.save();
+            } else {
+                const newDevice = new User_Device ({
+                    userId: req.userId,
+                    deviceClass: deviceClass,
+                    deviceIcon: data.deviceIcon,
+                    deviceName: deviceName,
+                    deviceSerial: deviceSerial,
+                    deviceRoom: deviceRoom,
+                    online: false,
+                    status:  false
+                });
 
-            console.log('Device Added Successfully!');
-            console.log(newDevice);
+                await newDevice.save();
+                console.log('Device Added Successfully!');
+                console.log(newDevice);
+            }
         
             return res.status(201).send({
                 auth: true,
