@@ -22,6 +22,7 @@ app.use( express.static(publicPath) );
 const users_routes = require('./routes/users');
 const devices_routes = require('./routes/devices');
 const rooms_routes = require('./routes/rooms');
+const thermostat_routes = require('./routes/thermostat');
 //const { Console } = require('console');
 
 
@@ -29,6 +30,7 @@ const rooms_routes = require('./routes/rooms');
 app.use('/api', users_routes);
 app.use('/api', devices_routes);
 app.use('/api', rooms_routes);
+app.use('/api', thermostat_routes);
 
 //exports
 module.exports = sslserver;

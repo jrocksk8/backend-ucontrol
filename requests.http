@@ -1,5 +1,5 @@
 @apiURL =  https://192.168.1.26:3000/api
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMDcwNzQzMiwiZXhwIjoxNjIwODgwMjMyfQ.8c4QUsCW404ZR6RB8I21YdMknVufcWIgf4bik0yOjQo
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMDg2MjQ2NSwiZXhwIjoxNjIxMDM1MjY1fQ.1aMuhspEC9K86zE2uFP387DwjiIwWethKw6p76tqgEE
 
 ////////////////////// USERS CONTROLLER //////////////////////
 
@@ -127,3 +127,13 @@ Content-Type: application/json
 }
 
 
+////////////////////// THERMOSTAT CONTROLLER //////////////////////
+
+### THERMOSTAT: LIST TEMPERATURES
+GET {{apiURL}}/thermostat/temp
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "deviceSerial": "01"
+}
