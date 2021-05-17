@@ -1,5 +1,5 @@
 @apiURL =  https://192.168.1.26:3000/api
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMDg2MjQ2NSwiZXhwIjoxNjIxMDM1MjY1fQ.1aMuhspEC9K86zE2uFP387DwjiIwWethKw6p76tqgEE
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMTA2MDUxOSwiZXhwIjoxNjIxMjMzMzE5fQ.0o1Cf_7kVTDTO0LihRraweKNHRY5k6gJ1dPO9P4oja8
 
 ////////////////////// USERS CONTROLLER //////////////////////
 
@@ -135,5 +135,25 @@ x-access-token: {{token}}
 Content-Type: application/json
 
 {
-    "deviceSerial": "01"
+    "deviceSerial": "S8URJ8QP5B27ECQ"
+}
+
+### THERMOSTAT: LIST TEMPERATURES (LAST DAY)
+GET {{apiURL}}/thermostat/tempLastDay
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "dateNow": "2021-05-16",
+    "deviceSerial": "S8URJ8QP5B27ECQ"
+}
+
+### THERMOSTAT: LIST TEMPERATURES (LAST HOUR)
+GET {{apiURL}}/thermostat/tempLastHour
+x-access-token: {{token}}
+Content-Type: application/json
+
+{
+    "dateNow": "2021-05-15T08:00:21.241+00:00",
+    "deviceSerial": "S8URJ8QP5B27ECQ"
 }
