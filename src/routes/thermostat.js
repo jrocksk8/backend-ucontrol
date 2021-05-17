@@ -6,8 +6,8 @@ const router = express.Router();
 const thermostatController = require('../controllers/thermostat');
 const verifyToken = require('../controllers/verifyToken');
 
-router.get ('/thermostat/temp', verifyToken, thermostatController.temp);
-router.get ('/thermostat/tempLastDay', verifyToken, thermostatController.tempLastDay);
-router.get ('/thermostat/tempLastHour', verifyToken, thermostatController.tempLasthour);
+router.post ('/thermostat/temp', verifyToken, thermostatController.temp);
+router.post ('/thermostat/tempLastDay', verifyToken, thermostatController.tempLastDay);
+router.post ('/thermostat/tempLastHour', verifyToken, thermostatController.tempLasthour);
 
 module.exports = router;

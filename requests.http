@@ -130,7 +130,7 @@ Content-Type: application/json
 ////////////////////// THERMOSTAT CONTROLLER //////////////////////
 
 ### THERMOSTAT: LIST TEMPERATURES
-GET {{apiURL}}/thermostat/temp
+POST {{apiURL}}/thermostat/temp
 x-access-token: {{token}}
 Content-Type: application/json
 
@@ -139,7 +139,7 @@ Content-Type: application/json
 }
 
 ### THERMOSTAT: LIST TEMPERATURES (LAST DAY)
-GET {{apiURL}}/thermostat/tempLastDay
+POST {{apiURL}}/thermostat/tempLastDay
 x-access-token: {{token}}
 Content-Type: application/json
 
@@ -149,7 +149,7 @@ Content-Type: application/json
 }
 
 ### THERMOSTAT: LIST TEMPERATURES (LAST HOUR)
-GET {{apiURL}}/thermostat/tempLastHour
+POST {{apiURL}}/thermostat/tempLastHour
 x-access-token: {{token}}
 Content-Type: application/json
 
