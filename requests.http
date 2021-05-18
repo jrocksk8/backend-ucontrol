@@ -1,6 +1,5 @@
 @apiURL =  https://192.168.1.26:3000/api
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMTA2MDUxOSwiZXhwIjoxNjIxMjMzMzE5fQ.0o1Cf_7kVTDTO0LihRraweKNHRY5k6gJ1dPO9P4oja8
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwN2E5MzkwMDE3OTk3MTMzMDZiYWU2ZiIsImlhdCI6MTYyMTMwMjM2MCwiZXhwIjoxNjIxNDc1MTYwfQ.swNronNMs1LRtZEclYNnlfmWQhkn2imwTRARRHKAx84
 ////////////////////// USERS CONTROLLER //////////////////////
 
 ### USERS: RENEW TOKEN
@@ -144,7 +143,7 @@ x-access-token: {{token}}
 Content-Type: application/json
 
 {
-    "dateNow": "2021-05-16",
+    "dateNow": "{{$datetime iso8601}}",
     "deviceSerial": "S8URJ8QP5B27ECQ"
 }
 
@@ -154,6 +153,6 @@ x-access-token: {{token}}
 Content-Type: application/json
 
 {
-    "dateNow": "2021-05-15T08:00:21.241+00:00",
+    "dateNow": "{{$datetime iso8601}}",
     "deviceSerial": "S8URJ8QP5B27ECQ"
 }
